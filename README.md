@@ -8,8 +8,8 @@
 
 06
 
-- [github]()
-- [Testing]() 
+- [github](https://github.com/TrunkOfUkuleles/basic-auth)
+- [Testing](https://github.com/TrunkOfUkuleles/basic-auth/actions) 
 
 ### Setup
 
@@ -33,4 +33,4 @@ Link to an image of the UML for your application and response to events
 
 
 02
-![Class 06 UML]()
+![Class 06 UML]('./assets/auth-server-UML.jpg')
