@@ -19,6 +19,7 @@ describe('auth system', () => {
 
     it('should create a new user to the DB', async () => {
         const user = await mockRequest.post('/signup').send({ username: "Test3", password: "testMan3" })
+        console.log("new user: ", user)
         expect(user.status).toBe(201);
       });
 
