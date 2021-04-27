@@ -3,6 +3,7 @@
 const express = require('express');
 const User = require('../models/userModel.js');
 const authLayer = require('../../src/middleware/signin.js');
+const validate = require('../../auth/password.js')
 
 const appRouter = express.Router();
 
@@ -13,7 +14,8 @@ appRouter.post('/login', authLayer, signIn);
     const username = req.body.username
     try {
         const user = await User.findOne({ username })
-        const valid = await bcrypt.compare(req.body.password, user.password);
+        // const valid = await bcrypt.compare(req.body.password, user.password);
+        const valid = await validate(req.body.password, user.password)
         if (valid) {
           res.status(200).json(user);
         }

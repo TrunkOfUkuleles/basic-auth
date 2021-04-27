@@ -5,13 +5,10 @@ const bcrypt = require('bcrypt'); // this is for actual pw management -> hash it
 
 
 
-async function encrypt(password) {
+async function validate(password, hashed) {
     // let decoded = base64.decode(password)
-    let hashed = await bcrypt.hash(password, 10);
-    console.log('hashed pw: ', hashed);
-  
-    let compare = await bcrypt.compare(password, hashed);
-    console.log('is hash the same as plain text password', compare);
-    return compare
+    return await bcrypt.compare(password, hashed);
+    
   }
 
+module.exports = validate
